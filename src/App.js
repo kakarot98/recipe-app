@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-//import logo from "./logo.svg";
+import Recipe from "./Recipe.js";
 import "./App.css";
 
 const App = () => {
   const APP_ID = "23a086bd";
   const APP_KEY = "5031e1c29d48a95e28341fcad47fa3c5";
+
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     getRecipes();
@@ -16,7 +18,7 @@ const App = () => {
     );
 
     const data = await response.json();
-    console.log(data);
+    console.log(data.hits);
   };
 
   return (
