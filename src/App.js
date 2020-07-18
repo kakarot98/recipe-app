@@ -18,6 +18,7 @@ const App = () => {
     );
 
     const data = await response.json();
+    setRecipes(data.hits);
     console.log(data.hits);
   };
 
@@ -29,6 +30,13 @@ const App = () => {
           Search
         </button>
       </form>
+      {recipes.map((recipe) => (
+        <Recipe
+          title={recipe.recipe.label}
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image}
+        />
+      ))}
     </div>
   );
 };
