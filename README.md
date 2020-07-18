@@ -1,3 +1,11 @@
+## this project was created as a practice project for ReactJs
+
+you can find the tutroial here: https://www.youtube.com/watch?v=U9T6YkEDkMo&t=483s
+
+Following are some visual representation of how the web-app would look when run locally:
+
+![](https://github.com/kakarot98/recipe-app/blob/master/src/GIF1.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
