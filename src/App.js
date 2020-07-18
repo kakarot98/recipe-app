@@ -8,7 +8,7 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("");
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -18,6 +18,7 @@ const App = () => {
   const getQuery = (e) => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
 
   useEffect(() => {
@@ -53,6 +54,7 @@ const App = () => {
           title={recipe.recipe.label}
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
+          ingredients={recipe.recipe.ingredients}
         />
       ))}
     </div>
