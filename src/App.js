@@ -12,7 +12,6 @@ const App = () => {
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   const getQuery = (e) => {
@@ -29,10 +28,8 @@ const App = () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data.hits);
   };
 
   return (
@@ -48,15 +45,17 @@ const App = () => {
           Search
         </button>
       </form>
-      {recipes.map((recipe) => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-      ))}
+      <div className="recipe">
+        {recipes.map((recipe) => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        ))}
+      </div>
     </div>
   );
 };
